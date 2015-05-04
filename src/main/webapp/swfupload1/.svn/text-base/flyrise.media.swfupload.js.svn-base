@@ -1,0 +1,46 @@
+FeMediaSwfupload = function(config, swfu) {
+	var swfu = swfu;
+	swfid = config.id || "";
+	var path = "/js39/swfupload/";
+
+	var defaults = {
+		flash_url						: path + "swfupload.swf",
+		flash9_url						: path + "swfupload_fp9.swf",
+		upload_url						: "/AttachmentServlet39?actionType=upload",
+		file_size_limit					: "20 MB",
+		file_types						: "*.jpg;*.jpeg;*.png;*.gif;*.bmp;*.rar;*.zip;*.doc;*.docx;*.xls;*.xlsx;*.txt;*.log;*.7z;*.pdf;*.ppt;*.pptx;*.iso",
+		file_types_description			: "All Files",
+		file_upload_limit				: 0,
+		post_params						: {},
+		file_queue_limit				: 0,
+		debug							: false,
+		button_width					: "80",
+		button_height					: "30",
+		button_placeholder_id			: "spanButtonPlaceHolder",
+		button_image_url				: "/css39/images/swfupload/btn_appendix.png",
+		button_text						: "\u4e0a\u4f20\u6587\u4ef6",
+		button_text_style				: "",
+		button_text_left_padding		: 10,
+		button_disabled					: false,
+		button_cursor					: MediaSWFUpload.CURSOR.HAND,
+		button_action					: MediaSWFUpload.BUTTON_ACTION.SELECT_FILES,
+		button_text_top_padding			: 0,
+		button_window_mode				: MediaSWFUpload.WINDOW_MODE.TRANSPARENT,
+		swfupload_preload_handler		: mediaPreLoad,
+		swfupload_load_failed_handler	: mediaLoadFailed,
+		file_size_limit					: fileSizeLimit,
+		file_queued_handler				: mediaFileQueued,
+		file_queue_error_handler		: mediaFileQueueError,
+		file_dialog_start_handler		: mediaFileDialogStart,
+		file_dialog_complete_handler	: mediaFileDialogComplete,
+		upload_start_handler			: mediaUploadStart,
+		upload_progress_handler			: mediaUploadProgress,
+		upload_error_handler			: mediaUploadError,
+		upload_success_handler			: mediaUploadSuccess,
+		upload_complete_handler			: mediaUploadComplete,
+		queue_complete_handler			: mediaQueueComplete
+	};
+	var opts = $.extend({}, defaults, config);
+	swfu = new MediaSWFUpload(opts);
+	var fileSizeLimit = !opts.file_size_limit ? "\u5355\u6587\u4ef6\u5927\u5c0f\u65e0\u9650\u5236" : "\u5355\u6587\u4ef6\u5927\u5c0f\u4e0d\u80fd\u8d85\u8fc7<span class='color_red'>" + opts.file_size_limit + "</span>";
+};
