@@ -72,9 +72,31 @@
 		<!-- 解析客户端操作系统、浏览器等 -->
 		<useragentutils.version>1.19</useragentutils.version>
 		<xstream.version>1.4.2</xstream.version>
+		<jacksonMapper.version>1.9.2</jacksonMapper.version>
+		<jacksonCore.version>1.9.2</jacksonCore.version>
+		<springData.version>1.0.1.RELEASE</springData.version>
 	</properties>
 
 	<dependencies>
+
+		<!-- Spring Data -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-mongodb</artifactId>
+			<version>${springData.version}</version>
+		</dependency>
+
+		<!-- Jackson JSON Processor -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>${jacksonMapper.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-asl</artifactId>
+			<version>${jacksonCore.version}</version>
+		</dependency>
 		<!-- springframe start -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -449,13 +471,13 @@
 			<version>${mongoJava.version}</version>
 		</dependency>
 
-		
+
 		<!-- XStream -->
-        <dependency>
-            <groupId>com.thoughtworks.xstream</groupId>
-            <artifactId>xstream</artifactId>
-            <version>${xstream.version}</version>
-        </dependency>
+		<dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>${xstream.version}</version>
+		</dependency>
 
 
 	</dependencies>
