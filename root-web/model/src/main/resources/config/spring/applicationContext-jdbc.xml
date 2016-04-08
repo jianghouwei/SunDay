@@ -21,12 +21,9 @@
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <!-- Setting up the data source as defined in an external context file: applicationContext-jdbc.xml -->
         <property name="dataSource" ref="dataSource"/>
-
         <property name="packagesToScan" value="com.yourpackagename.yourwebproject.model"/>
-
         <!-- Setting the Hibernate config file path for linking up the entity POJOs -->
         <property name="configLocation" value="classpath:config/database/hibernate.cfg.xml"/>
-
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>

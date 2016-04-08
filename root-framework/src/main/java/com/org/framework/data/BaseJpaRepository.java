@@ -1,9 +1,9 @@
 package com.org.framework.data;
 
-import org.hibernate.criterion.Order;
-
 import java.io.Serializable;
 import java.util.Collection;
+
+import org.hibernate.criterion.Order;
 
 /**
  * Data Access Object (DAO) interface. This is an interface used to tag our DAO
@@ -75,5 +75,6 @@ public interface BaseJpaRepository<T extends Entity, ID extends Serializable> {
      * @throws Exception
      */
     public Collection<T> findAllByPage(int pageNum, int countPerPage, Order order);
+    
 
 }

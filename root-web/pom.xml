@@ -12,5 +12,6 @@
   <description>web</description>
   <modules>
   	<module>model</module>
+  	<module>admin</module>
   </modules>
 </project>

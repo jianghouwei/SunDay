@@ -18,7 +18,7 @@
 
     <mvc:annotation-driven/>
 
-    <!-- Handles HTTP GET requests for /res/** by efficiently serving up static resources in the ${webappRoot}/res directory -->
+    <!-- Handles HTTP GET requ	g up static resources in the ${webappRoot}/res directory -->
    	<mvc:resources mapping="/res/**" location="/res/" />
 
     <bean id="tilesConfigurer"

@@ -1,6 +1,9 @@
 package com.org.framework.data;
 
 import org.hibernate.criterion.Order;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 
 import com.org.framework.validation.Validity;
 
@@ -78,4 +81,20 @@ public interface BaseService<T extends Entity, ID extends Serializable> {
      * @return
      */
     public Validity validate(T object);
+    
+    /**
+	 * Returns all entities sorted by the given options.
+	 * 
+	 * @param sort
+	 * @return all entities sorted by the given options
+	 */
+	Iterable<T> findAll(Sort sort);
+
+	/**
+	 * Returns a {@link Page} of entities meeting the paging restriction provided in the {@code Pageable} object.
+	 * 
+	 * @param pageable
+	 * @return a page of entities
+	 */
+	Page<T> findAll(Pageable pageable);
 }
